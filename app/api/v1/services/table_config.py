@@ -1,6 +1,6 @@
 # app/core/config_loader.py
 # Dummy version - later replace with DB queries
-from app.core.mock_db import mock_db
+from app.core.mock_db.db import mock_db
 
 def get_config_for_table(table_name: str):
     

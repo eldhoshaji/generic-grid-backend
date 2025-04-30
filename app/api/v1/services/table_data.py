@@ -1,5 +1,5 @@
 from typing import List
-from app.core.mock_db import mock_db
+from app.core.mock_db.db import mock_db
 from app.schemas.params import PaginationParams, SearchParam, FilterParam, SortParam
 
 def get_data_for_table(

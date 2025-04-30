@@ -13,5 +13,4 @@ async def fetch_table_config(table_name: str):
     if not config:
         raise HTTPException(status_code=404, detail="Config not found")
     
-    a = json.dumps(config)
     return TableConfigResponseModel(**config)
