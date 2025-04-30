@@ -1,0 +1,52 @@
+# Python
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+*.db
+*.sqlite3
+
+# Virtual environment
+venv/
+env/
+.venv/
+env.bak/
+venv.bak/
+
+# FastAPI-specific
+instance/
+.pytest_cache/
+*.log
+
+# IDEs and editors
+.vscode/
+.idea/
+*.swp
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Docker
+*.dockerfile
+docker-compose.override.yml
+
+# Misc
+*.env
+*.env.*
+*.local
+*.bak
+*.tmp
+*.pid
+*.seed
+*.swp
+.DS_Store
+Thumbs.db
+
+# Test results
+nosetests.xml
+coverage.xml
+*.cover
+*.hypothesis/
+*.tox/
+*.nox/
+*.coverage.*
