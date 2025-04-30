@@ -8,48 +8,47 @@ Follow these steps to set up and run the application locally:
 
 1. **Create a Virtual Environment**
 
-    First, create a virtual environment to isolate your project dependencies.
-    - On **Windows**, run:
-        ```bash
-        python -m venv venv
-        ```
-    - On **macOS/Linux**, run:
-        ```bash
-        python3 -m venv venv
-     ```
+   First, create a virtual environment to isolate your project dependencies.
 
+   - On **Windows**, run:
+     ```bash
+     python -m venv venv
+     ```
+   - On **macOS/Linux**, run:
+     ```bash
+     python3 -m venv venv
+     ```
 2. **Activate the Virtual Environment**
 
-    - On **Windows**, run:
-        ```bash
-        .\venv\Scripts\activate
-        ```
-    - On **macOS/Linux**, run:
-        ```bash
-        source venv/bin/activate
-        ```
+   - On **Windows**, run:
+     ```bash
+     .\venv\Scripts\activate
+     ```
+   - On **macOS/Linux**, run:
+     ```bash
+     source venv/bin/activate
+     ```
 
-    You should see `(venv)` at the beginning of your command line prompt, indicating the virtual environment is active.
-
+   You should see `(venv)` at the beginning of your command line prompt, indicating the virtual environment is active.
 3. **Install Requirements**
 
-    Once the virtual environment is activated, install the necessary dependencies listed in `requirements.txt`:
-    ```bash
-    pip install -r requirements.txt
-    ```
+   Once the virtual environment is activated, install the necessary dependencies listed in `requirements.txt`:
 
+   ```bash
+   pip install -r requirements.txt
+   ```
 4. **Run the Application**
 
-    To start the FastAPI application, use Uvicorn to run the app:
-    ```bash
-    uvicorn app.main:app --reload
-    ```
+   To start the FastAPI application, use Uvicorn to run the app:
 
+   ```bash
+   uvicorn app.main:app --reload
+   ```
 5. **Access Swagger Documentation**
 
-    Once the application is running, you can access the interactive Swagger UI documentation at: http://127.0.0.1:8000/docs
-    This documentation allows you to explore and test the API endpoints directly from your browser.
+   Once the application is running, you can access the interactive Swagger UI documentation at: http://127.0.0.1:8000/docs
+   This documentation allows you to explore and test the API endpoints directly from your browser.
 
 ## Notes:
-Ensure you have Python 3.7+ installed on your machine.
 
+Ensure you have Python 3.7+ installed on your machine.
