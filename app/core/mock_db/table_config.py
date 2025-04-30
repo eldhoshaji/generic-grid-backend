@@ -123,14 +123,6 @@ table_config = [
     {
         "table_name": "product_price_comparison",
         "column_configs": [
-            # {
-            #     "title": "Product ID",
-            #     "key": "id",
-            #     "type": "number",
-            #     "filterable": False,
-            #     "sortable": True,
-            #     "searchable": False
-            # },
             {
                 "title": "Product Name",
                 "key": "name",

@@ -1,7 +1,7 @@
 from typing import Generic, TypeVar, List
 from pydantic import BaseModel
 from typing import Literal
-from pydantic.generics import GenericModel
+# from pydantic.generics import GenericModel
 
 class PaginationParams(BaseModel):
     page: int = 1
@@ -19,10 +19,9 @@ class SortParam(BaseModel):
     key: str
     direction: Literal['asc', 'desc'] = 'asc'
 
-
 T = TypeVar("T")
 
-class PaginatedResponse(GenericModel, Generic[T]):
+class PaginatedResponse(BaseModel, Generic[T]):
     total: int
     page: int
     size: int
