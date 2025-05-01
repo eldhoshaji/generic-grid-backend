@@ -9,5 +9,3 @@ mock_db = {
     "products": product_data,
     "product_price_comparison": product_price_comparison_data
 }
-
-

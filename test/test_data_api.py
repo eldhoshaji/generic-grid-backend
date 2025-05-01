@@ -4,10 +4,11 @@ from app.main import app  # Import your FastAPI app
 # Initialize the test client
 client = TestClient(app)
 
+
 # Test for fetch_table_data endpoint (with real API request)
 def test_fetch_table_data_success():
     table_name = "users"
-    
+
     # Simulate the POST request with body params
     response = client.post(
         f"api/v1/data/{table_name}",
@@ -17,10 +18,10 @@ def test_fetch_table_data_success():
             "sort": {"key": "age", "direction": "asc"}
         }
     )
-    
+
     # Assert status code
     assert response.status_code == 200
-    
+
     # Assert response structure
     data = response.json()
     assert "total" in data
@@ -28,10 +29,10 @@ def test_fetch_table_data_success():
     assert "size" in data
     assert "items" in data
     assert isinstance(data["items"], list)
-    
+
     # Validate the first item in the response
     assert len(data["items"]) > 0  # Ensure at least one item is returned
-    
+
     # Check if the user is the one with "Ashley Bell" as the name
     assert data["items"][0]["name"] == "Ashley Bell"
     assert data["items"][0]["age"] == 30
@@ -43,7 +44,7 @@ def test_fetch_table_data_success():
 
 def test_fetch_table_data_not_found():
     table_name = "non_existing_table"
-    
+
     # Simulate the POST request with body params
     response = client.post(
         f"api/v1/data/{table_name}",
@@ -53,6 +54,6 @@ def test_fetch_table_data_not_found():
             "pagination": {"page": 1, "size": 10},
             "sort": {"key": "age", "direction": "asc"}
         }
-    )    
+    )
     # Assert status code and error message
     assert response.status_code == 422

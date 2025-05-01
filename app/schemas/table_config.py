@@ -1,10 +1,11 @@
 from pydantic import BaseModel
 from typing import Any, Literal, List
 
+
 class FilterOption(BaseModel):
     text: str
     value: str
-    
+
 
 class RowStyleRules(BaseModel):
     field: str
@@ -12,7 +13,7 @@ class RowStyleRules(BaseModel):
         'equals', 'notEquals', 'lt', 'gt', 'lte', 'gte',
         'includes', 'startsWith', 'endsWith', 'matches'
     ]
-    value: Any 
+    value: Any
     class_name: str
 
 

@@ -1,5 +1,5 @@
 table_config = [
-    { 
+    {
         "table_name": "users",
         "column_configs": [
             {
@@ -109,7 +109,6 @@ table_config = [
                 "sortable": False,
                 "searchable": True
             }
-            
         ],
         "row_style_rules": [
             {

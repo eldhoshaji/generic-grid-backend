@@ -2,12 +2,13 @@ from typing import List
 from app.core.mock_db.db import mock_db
 from app.schemas.params import PaginationParams, SearchParam, FilterParam, SortParam
 
+
 def get_data_for_table(
-    table_name: str, 
-    search: SearchParam=None, 
-    filters: List[FilterParam]=None, 
-    pagination: PaginationParams=PaginationParams(),
-    sort: SortParam=None
+    table_name: str,
+    search: SearchParam = None,
+    filters: List[FilterParam] = None,
+    pagination: PaginationParams = PaginationParams(),
+    sort: SortParam = None
 ):
     data = mock_db.get(table_name)
 
@@ -26,5 +27,5 @@ def get_data_for_table(
     # Pagination logic
     start_index = (pagination.page - 1) * pagination.size
     end_index = start_index + pagination.size
-    
+
     return len(data), data[start_index:end_index]

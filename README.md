@@ -18,6 +18,7 @@ Follow these steps to set up and run the application locally:
      ```bash
      python3 -m venv venv
      ```
+
 2. **Activate the Virtual Environment**
 
    - On **Windows**, run:
@@ -30,6 +31,7 @@ Follow these steps to set up and run the application locally:
      ```
 
    You should see `(venv)` at the beginning of your command line prompt, indicating the virtual environment is active.
+
 3. **Install Requirements**
 
    Once the virtual environment is activated, install the necessary dependencies listed in `requirements.txt`:
@@ -37,6 +39,7 @@ Follow these steps to set up and run the application locally:
    ```bash
    pip install -r requirements.txt
    ```
+
 4. **Run the Application**
 
    To start the FastAPI application, use Uvicorn to run the app:
@@ -44,10 +47,19 @@ Follow these steps to set up and run the application locally:
    ```bash
    uvicorn app.main:app --reload
    ```
+
 5. **Access Swagger Documentation**
 
    Once the application is running, you can access the interactive Swagger UI documentation at: http://127.0.0.1:8000/docs
    This documentation allows you to explore and test the API endpoints directly from your browser.
+
+6. **Check for Lint Issues (Optional)**
+
+   To start the FastAPI application, use Uvicorn to run the app:
+
+   ```bash
+   flake8 .
+   ```
 
 ## Notes:
 

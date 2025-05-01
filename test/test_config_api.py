@@ -3,19 +3,20 @@ from app.main import app  # Import the FastAPI app
 
 client = TestClient(app)
 
+
 def test_fetch_table_config_success():
     # Make an actual API request
     response = client.get("api/v1/config/users")
-    
+
     # Check if the status code is 200
     assert response.status_code == 200
-    
+
     # Get the response data as JSON
     data = response.json()
-    
-   # Assert the 'table_name' is correct
+
+    # Assert the 'table_name' is correct
     assert data["table_name"] == "users"
-    
+
     # Assert 'row_style_rules' contains the required fields
     assert len(data["row_style_rules"]) > 0
     row_style_rule = data["row_style_rules"][0]
@@ -23,7 +24,7 @@ def test_fetch_table_config_success():
     assert "operator" in row_style_rule
     assert "value" in row_style_rule
     assert "class_name" in row_style_rule
-    
+
     # Assert 'column_configs' contains the required fields
     assert len(data["column_configs"]) > 0
     column_config = data["column_configs"][0]

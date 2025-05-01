@@ -1,9 +1,8 @@
-# app/core/config_loader.py
-# Dummy version - later replace with DB queries
 from app.core.mock_db.db import mock_db
 
+
 def get_config_for_table(table_name: str):
-    
+
     table_config = next((item for item in mock_db["table_config_db"] if item["table_name"] == table_name), None)
 
     for field in table_config["column_configs"]:

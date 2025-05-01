@@ -2,7 +2,7 @@ from fastapi import APIRouter, HTTPException, Body
 from app.api.v1.services.table_data import get_data_for_table
 from app.schemas.params import PaginatedResponse, PaginationParams, FilterParam, SearchParam, SortParam
 from app.schemas.table_response import UserResponseModel, ProductResponseModel, PriceComparisonResponseModel
-from typing import Any, List, Type, Dict
+from typing import List, Type, Dict
 
 router = APIRouter()
 
@@ -13,9 +13,9 @@ TABLE_MODEL_MAP: Dict[str, Type] = {
     "product_price_comparison": PriceComparisonResponseModel
 }
 
+
 # Helper function to get the correct model based on the table name
 def get_response_model(table_name: str):
-    # Default to UserResponseModel if table_name is not found
     return TABLE_MODEL_MAP.get(table_name, UserResponseModel)
 
 
@@ -32,7 +32,7 @@ async def fetch_table_data(
     total, data = get_data_for_table(table_name, search, filters, pagination, sort)
     if not data:
         raise HTTPException(status_code=404, detail="Data not found")
-    
+
     return PaginatedResponse[response_model](
         total=total,
         page=pagination.page,

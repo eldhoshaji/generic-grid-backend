@@ -1,5 +1,5 @@
 from typing import List
-from pydantic import BaseModel, Field
+from pydantic import BaseModel
 from typing import Optional
 
 
@@ -10,6 +10,7 @@ class UserResponseModel(BaseModel):
     age: int
     address: str
     tags: List[str]
+
 
 class ProductResponseModel(BaseModel):
     id: int
