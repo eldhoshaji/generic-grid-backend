@@ -32,7 +32,12 @@ Follow these steps to set up and run the application locally:
 
    You should see `(venv)` at the beginning of your command line prompt, indicating the virtual environment is active.
 
-3. **Install Requirements**
+3. **Ensure the Correct Python Interpreter is Selected**
+
+   Make sure the Python interpreter selected in your code editor (e.g., VS Code) is the one from your virtual environment (venv). 
+   In VS Code, you can do this by selecting the interpreter from the command palette (Ctrl+Shift+P) and choosing the interpreter inside the venv folder.
+
+4. **Install Requirements**
 
    Once the virtual environment is activated, install the necessary dependencies listed in `requirements.txt`:
 
@@ -40,7 +45,7 @@ Follow these steps to set up and run the application locally:
    pip install -r requirements.txt
    ```
 
-4. **Run the Application**
+5. **Run the Application**
 
    To start the FastAPI application, use Uvicorn to run the app:
 
@@ -48,17 +53,25 @@ Follow these steps to set up and run the application locally:
    uvicorn app.main:app --reload
    ```
 
-5. **Access Swagger Documentation**
+6. **Access Swagger Documentation**
 
    Once the application is running, you can access the interactive Swagger UI documentation at: http://127.0.0.1:8000/docs
    This documentation allows you to explore and test the API endpoints directly from your browser.
 
-6. **Check for Lint Issues (Optional)**
+7. **Check for Lint Issues (Optional)**
 
    To start the FastAPI application, use Uvicorn to run the app:
 
    ```bash
    flake8 .
+   ```
+
+8. **Run Tests**
+
+   To run the tests for the FastAPI application, use pytest:
+
+   ```bash
+   pytest
    ```
 
 ## Notes:
